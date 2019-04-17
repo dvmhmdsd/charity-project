@@ -1,0 +1,336 @@
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: url('https://j.gifs.com/l5EkBr.gif') no-repeat;
+    background-color: #272727;
+    background-size: cover;
+    background-position: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+}
+
+header {
+	width: 30%;
+	background-color: rgba(7, 7, 7, 0.3);
+    margin: auto;
+    padding:2px;
+    border-radius: 10px;
+    opacity: 0.4;
+    margin-top: 15px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30pt;
+}
+
+/*Big Container*/
+.bigContainer {
+	height: 75%;
+	display: flex;
+}
+/* This is the block div that holds all the menu*/
+
+.menu {
+    /*margin-top: 100px;*/
+    background: rgba(7, 7, 7, 0.6);
+    width: 210px;
+    height: 210px;
+    margin-left: 0;
+    border-radius: 5px;
+    transition: all ease 500ms;
+}
+
+.toggle {
+    width: 40px;
+    height: 40px;
+    background: rgba(7, 7, 7, 0.6);
+    opacity: 0.6;
+}
+
+button {
+    width: 40px;
+    height: 40px;
+    font-size: 20pt;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul li {
+    width: 210px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 13pt;
+    font-weight: bold;
+    border-bottom: 2px solid gray;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    transition: all ease-in-out 500ms;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    transition: all 500ms ease-in-out;
+}
+
+ul li:hover {
+    background-color: green;
+    transition: all 500ms ease;
+}
+
+.box {
+    margin-top: -40px;
+}
+
+ul li ul li {
+    margin-left: 210px;
+    display: none;
+    background: rgba(7, 7, 7, 0.6);
+    border-radius: 4px;
+    transition: all 500ms ease;
+}
+
+ul li:hover ul li {
+    display: block;
+    animation: menu 500ms forwards;
+    transition: all 500ms ease-out;
+}
+
+@keyframes menu {
+    0% {
+        opacity: 0;
+        top: 5px;
+    }
+    100% {
+        opacity: 1;
+        top: 0px;
+    }
+}
+/* .................................................................. */
+/* ------ Modal ------*/
+.modal_container {
+    width: 100%;
+    height: 100%;
+    background: rgba(39, 23, 66, 0.7);
+    opacity: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    transition: all 500ms ease;
+}
+
+.modal_container:target {
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 500ms ease;
+}
+
+.modal_container>div {
+    transform: translate(0px, -50px);
+    transition: all 500ms ease;
+}
+
+.modal_container:target>div {
+    transform: translate(0px, 0px);
+    transition: all 500ms ease;
+}
+
+.modal {
+    display: block;
+    box-sizing: border-box;
+    width: 500px;
+    height: 400px;
+    margin: auto;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    background: rgba(2, 7, 8, 0.8);
+    border: 2px solid #222;
+    border-radius: 4%;
+    padding: 1%;
+    box-shadow: 0px 0px 50px 5px black;
+    z-index: 3000;
+}
+
+.modal_heading {
+    box-sizing: border-box;
+    width: 100%;
+    display: block;
+    height: 15%;
+    margin-bottom: 3%;
+    color: yellow;
+    padding: 1%;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 20pt;
+    font-family: sans-serif;
+    border-bottom: 2px solid #40415a;
+}
+
+
+/*This is the Paragraph*/
+
+p {
+    box-sizing: border-box;
+    /*outline: 2px solid red;*/
+    text-shadow: 0.5px 2px 2px black;
+    color: white;
+    margin-left: 25px;
+    font-size: 15pt;
+    line-height: 1.6;
+    display: block;
+    width: 90%;
+    font-family: cursive;
+    border-bottom: 2px solid #40415a;
+    margin-bottom: 20px;
+    padding: 1%;
+}
+
+
+/*Modal Close Button*/
+
+.close {
+    color: white;
+    position: absolute;
+    border: 2px solid #333;
+    padding: 7px 9px 11px 9px;
+    font-family: serif;
+    background: black;
+    text-decoration: none;
+    top: -20px;
+    right: -20px;
+    border-radius: 50%;
+    transition: background 500ms;
+}
+
+.close:hover {
+    background: #444;
+    cursor: pointer;
+}
+
+
+/* Inside Modal >> Left Button*/
+
+.watch {
+    padding: 1% 3%;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #40415a;
+    color: rgb(191, 202, 207);
+    margin-left: 5%;
+    margin-top: -5px;
+    float: left;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13pt;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    transition: all 500ms ease;
+}
+
+
+/* Inside Modal >> Right Button*/
+
+.forgot {
+    padding: 1% 3%;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #40415a;
+    color: rgb(191, 202, 207);
+    margin-right: 5%;
+    margin-top: -1%;
+    float: right;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13pt;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    transition: all 500ms ease;
+}
+
+.watch:hover,
+.forgot:hover {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+}
+
+
+/* .................................................................. */
+
+
+/*Modal Finished... continuing with page*/
+
+
+/*Moving to Banner Slider content*/
+.main-banner {
+  margin: 0 auto;
+  margin-right: 30px;
+	width: 300px;
+	height: 150px;
+	background-color: rgba(7, 7, 7, 0.6);
+	overflow: hidden;
+	position: relative;
+  border-radius: 14px;
+}
+
+.main-banner .imgban {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	transition: all ease-in-out 500ms;
+	-webkit-transition: all ease-in-out 500ms;
+	-moz-transition: all ease-in-out 500ms;
+	-o-transition: all ease-in-out 500ms;
+}
+
+
+.main-banner #imgban3 {
+	background-image: url(https://i.ytimg.com/vi/LlNnAXEhgV0/maxresdefault.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-blend-mode: screen;
+}
+
+.main-banner #imgban2 {
+	background-image: url(https://lh3.googleusercontent.com/proxy/-7_Vq54r9lIn-WjldfE8qGz_9N_CL44hoLw2ge836JBlZpMiPhMDLtz2yxlyqb_EDn-Pe8x3Et5UzAc=w480-h360-p-k);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.main-banner #imgban1 {
+	background-image: url(https://i.ytimg.com/vi/hyn6QYpvaIQ/maxresdefault.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+/* Footer */
+footer {
+	text-align: center;
+	opacity: 0.9;
+	font-size: 15pt;
+	font-family: cursive;
+	text-shadow: grey;
+}
